@@ -96,6 +96,7 @@ import editIcon from './icon--edit.svg';
 import addonsIcon from './addons.svg';
 import errorIcon from './tw-error.svg';
 
+import Logo from './logo.svg';
 import ninetiesLogo from './nineties_logo.svg';
 import catLogo from './cat_logo.svg';
 import prehistoricLogo from './prehistoric-logo.svg';
@@ -491,6 +492,18 @@ class MenuBar extends React.Component {
             >
                 <div className={styles.mainMenu}>
                     <div className={styles.fileGroup}>
+                        <div className={classNames(styles.menuBarItem)}>
+                            <img
+                                id="logo_img"
+                                alt="Mintblocks"
+                                className={classNames(styles.scratchLogo, {
+                                    [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
+                                })}
+                                draggable={false}
+                                src={this.props.logo}
+                                onClick={this.props.onClickLogo}
+                            />
+                        </div>
                         {this.props.errors.length > 0 && <div>
                             <MenuLabel
                                 open={this.props.errorsMenuOpen}
@@ -1053,6 +1066,7 @@ MenuBar.propTypes = {
     isUpdating: PropTypes.bool,
     locale: PropTypes.string.isRequired,
     loginMenuOpen: PropTypes.bool,
+    logo: PropTypes.string,
     mode1920: PropTypes.bool,
     mode1990: PropTypes.bool,
     mode2020: PropTypes.bool,
@@ -1076,6 +1090,7 @@ MenuBar.propTypes = {
     onClickEdit: PropTypes.func,
     onClickFile: PropTypes.func,
     onClickLogin: PropTypes.func,
+    onClickLogo: PropTypes.func,
     onClickMode: PropTypes.func,
     onClickNew: PropTypes.func,
     onClickNewWindow: PropTypes.func,
@@ -1115,6 +1130,7 @@ MenuBar.propTypes = {
 };
 
 MenuBar.defaultProps = {
+    logo: Logo,
     onShare: () => {}
 };
 
