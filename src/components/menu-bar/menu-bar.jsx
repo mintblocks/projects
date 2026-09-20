@@ -829,6 +829,15 @@ class MenuBar extends React.Component {
                                         </MenuItem>
                                     )}</CloudVariablesToggler>
                                 </MenuSection>
+                                <MenuSection>
+                                    <MenuItem onClick={this.props.onClickSettingsModal}>
+                                        <FormattedMessage
+                                            defaultMessage="Advanced Settings"
+                                            description="Menu bar item for advanced settings"
+                                            id="tw.menuBar.moreSettings"
+                                        />
+                                    </MenuItem>
+                                </MenuSection>
                             </MenuBarMenu>
                         </MenuLabel>
                         {this.props.isTotallyNormal && (
