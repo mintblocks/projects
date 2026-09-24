@@ -1,4 +1,4 @@
-scratch-gui modified for use in [TurboWarp](https://turbowarp.org/) modified for use in mintblocks
+scratch-gui modified for use in [TurboWarp](https://turbowarp.org/), then modified for use in [mintblocks](https://mintblocks.github.io/projects/)
 
 ## Setup
 
