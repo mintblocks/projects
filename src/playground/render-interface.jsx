@@ -55,6 +55,10 @@ const handleClickAddonSettings = addonId => {
     window.open(url);
 };
 
+const handleClickLogo = () => {
+    window.location.href = process.env.ROOT || '/';
+};
+
 const messages = defineMessages({
     defaultTitle: {
         defaultMessage: 'A turbowarp Mod',
@@ -240,6 +244,7 @@ class Interface extends React.Component {
                             canChangeTheme
                             enableSeeInside
                             onClickAddonSettings={handleClickAddonSettings}
+                            onClickLogo={handleClickLogo}
                         />
                     </div>
                 ) : null}
@@ -252,6 +257,7 @@ class Interface extends React.Component {
                 >
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
+                        onClickLogo={handleClickLogo}
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
                         backpackVisible
                         backpackHost="_local_"
