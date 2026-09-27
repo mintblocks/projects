@@ -28,6 +28,7 @@ jobs:
           ROOT: /projects/
 
       - name: run
+        shell: bash
         run: |
           npx pm2 delete webpage || true
           npx pm2 start npx --name "webpage" -- serve projects/build -p 4321 --single
