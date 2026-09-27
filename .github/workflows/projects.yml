@@ -32,4 +32,5 @@ jobs:
         continue-on-error: true
 
       - name: run
+        working-directory: projects-src
         run: npx pm2 start cmd.exe --name "webpage" -- /c npx serve build -p 4321 --single
