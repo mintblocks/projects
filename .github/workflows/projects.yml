@@ -27,8 +27,9 @@ jobs:
           NODE_ENV: production
           ROOT: /projects/
 
+      - name: stop existing pm2 process
+        run: npx pm2 delete webpage
+        continue-on-error: true
+
       - name: run
-        shell: bash
-        run: |
-          npx pm2 delete webpage || true
-          npx pm2 start npx --name "webpage" -- serve projects/build -p 4321 --single
+        run: npx pm2 start npx --name "webpage" -- serve projects/build -p 4321 --single
