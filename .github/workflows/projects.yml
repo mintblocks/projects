@@ -16,7 +16,11 @@ jobs:
           ref: develop
           path: projects-src
 
-      - name: install deps
+      - name: npm install
+        working-directory: projects-src
+        run: npm install
+      
+      - name: npm ci
         working-directory: projects-src
         run: npm ci
 
