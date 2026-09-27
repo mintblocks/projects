@@ -32,4 +32,4 @@ jobs:
         continue-on-error: true
 
       - name: run
-        run: npx pm2 start npx --name "webpage" -- serve projects/build -p 4321 --single
+        run: npx pm2 start cmd.exe --name "webpage" -- /c npx serve build -p 4321 --single
